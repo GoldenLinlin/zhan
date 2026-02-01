@@ -47,9 +47,9 @@ def worker(rank: int, gpus: int, args, stop: mp.Event):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--gpus", type=int, default=8)
-    p.add_argument("--m", type=int, default=4096)
+    p.add_argument("--m", type=int, default=100000)
     p.add_argument("--n", type=int, default=4096)
-    p.add_argument("--k", type=int, default=4096)
+    p.add_argument("--k", type=int, default=100000)
     p.add_argument("--dtype", type=str, default="fp16", choices=["fp16", "bf16", "fp32"])
     p.add_argument("--warmup", type=int, default=10)
     p.add_argument("--print-every", type=int, default=200)
